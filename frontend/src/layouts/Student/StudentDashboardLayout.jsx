@@ -15,17 +15,17 @@ export default function StudentDashboardLayout() {
     const [Itinerary, setItinerary] = useState([]);
     const { setUser, setAuthenticated, logout:ContextLogout,authenticated, user } = useUserContext();
 
-    useEffect(() => {
-        StudentApi.getUser().then(({ data }) => {
-                setUser({ name: data.name, email: data.email });
-                setAuthenticated(true);
+    // useEffect(() => {
+    //     StudentApi.getUser().then(({ data }) => {
+    //             setUser({ name: data.name, email: data.email });
+    //             setAuthenticated(true);
                 
-            })
-            .catch((reason) => {
-                ContextLogout();
-                navigate(LOGIN_ROUTE)
-            });
-    }, []);
+    //         })
+    //         .catch((reason) => {
+    //             ContextLogout();
+    //             navigate(LOGIN_ROUTE)
+    //         });
+    // }, []);
 
  
 
