@@ -96,7 +96,7 @@ const CreateItineraryForm = () => {
       
         <form className='w-[50vw] mx-auto' onSubmit={handleSubmit}>
             <h1 className='text-bold text-3xl text-center m-4 '>Create Itenerary</h1>
-            <div class="grid gap-6 mb-6 md:grid-cols-2">
+            <div className="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
                     <label
                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title:</label>
@@ -127,7 +127,7 @@ const CreateItineraryForm = () => {
             {formData.destinations.map((destination, index) => (
                 <div key={index}>
                     <h3 className='text-bold text-3xl text-center'>Destination {index + 1}</h3>
-                    <div class="grid gap-6 mb-6 md:grid-cols-2" >
+                    <div className="grid gap-6 mb-6 md:grid-cols-2" >
                         <div>
                             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Name: </label>
