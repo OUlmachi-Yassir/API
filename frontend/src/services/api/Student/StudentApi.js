@@ -32,12 +32,14 @@ logout:async()=>{
 getUser: async () => {
    try {
        const token = localStorage.getItem('token');
+       
        const headers = {
            'Authorization': `Bearer ${token}`,
            'Content-Type': 'application/json'
        };
+       
        const response = await axiosClient.get('api/user', { headers });
-
+       
        return response;
    } catch (error) {
        throw error;

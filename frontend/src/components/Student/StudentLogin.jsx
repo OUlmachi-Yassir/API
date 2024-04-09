@@ -33,29 +33,29 @@ export default function StudentLogin() {
     const { setError, formState: { isSubmitting } } = form
     // 2. Define a submit handler.
     const onSubmit = async values => {
-        try {
-            const response = await login(values.email, values.password);
-            const token = response.data.access_token;
-            localStorage.setItem('token', token);
-            setAuthenticated(true);
-            Navigate(STUDENT_DASHBOARD_ROUTE);
-        } catch (error) {
-            if (error.response) {
-                setError('email', {
-                    message: error.response.data.message || 'An error occurred',
-                });
-            } else if (error.request) {
-                setError('email', {
-                    message: 'Network error. Please try again later.',
-                });
-            } else {
-                setError('email', {
-                    message: 'An error occurred. Please try again later.',
-                });
-            }
+    try {
+        const response = await login(values.email, values.password);
+        const token = response.data.access_token;
+        localStorage.setItem('token', token);
+        setAuthenticated(true);
+        Navigate(STUDENT_DASHBOARD_ROUTE);
+    } catch (error) {
+        if (error.response) {
+            setError('email', {
+                message: error.response.data.message || 'An error occurred',
+            });
+        } else if (error.request) {
+            setError('email', {
+                message: 'Network error. Please try again later.',
+            });
+        } else {
+            setError('email', {
+                message: 'An error occurred. Please try again later.',
+            });
         }
-    };
-    
+    }
+};
+
 
 
 
